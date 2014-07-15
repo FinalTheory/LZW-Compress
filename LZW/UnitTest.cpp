@@ -1,5 +1,4 @@
 #include "bitIO.h"
-#include <cstdlib>
 #include <climits>
 #include <ctime>
 

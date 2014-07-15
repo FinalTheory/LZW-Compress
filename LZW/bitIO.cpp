@@ -1,6 +1,6 @@
 #include "bitIO.h"
 
-bitIO :: bitIO ( const char * filename, unsigned mode )
+bitIO::bitIO( const char * filename, const std::ios_base::openmode mode )
 : std :: fstream( filename, mode | std::ios::binary )
 {
 	std::ios::sync_with_stdio( false );

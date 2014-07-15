@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 using std::endl;
 using std::cerr;
@@ -20,7 +21,7 @@ const int BUF_SIZE = 1048576;
 class bitIO : public std::fstream
 {
 public:
-	bitIO(const char * filename, unsigned mode);
+	bitIO( const char * filename, const std::ios_base::openmode mode );
 	~bitIO();
 	void close( );
 	/*按位写入数据*/
@@ -38,7 +39,7 @@ private:
 	void readByte();
 	unsigned char * Buffer;
 	unsigned char curByte;
-	unsigned mode;
+	std::ios_base::openmode mode;
 	int BUF_END;
 	int nBits;
 	int pByte;
